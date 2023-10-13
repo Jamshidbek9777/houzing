@@ -1,9 +1,6 @@
 import React from "react";
-const Home =()=>{
-    return(
-        <Container>
-            Home
-        </Container>
-    )
-}
-export default Home
+import { Container } from "./style";
+const Home = () => {
+  return <Container>Home</Container>;
+};
+export default Home;

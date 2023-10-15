@@ -1,5 +1,6 @@
+import React from "react";
 import styled from "styled-components";
-
+// import {ReactComponent as filter} from "../../../assets/icons/filter-input.svg"4
 const getType = ({type}) => {
   switch (type) {
     case "dark":
@@ -13,10 +14,10 @@ const getType = ({type}) => {
       return {
         background: "#FFFFFF",
         border: "1px solid #e6e9ec",
-        color: "#FFFFFF",
+        color: "black",
       };
-    case "primary":
-      return {
+      case "primary":
+        return {
         background: "#0061df",
         border: "none",
         color: "#FFFFFF",
@@ -44,4 +45,5 @@ const Container = styled.button`
     opacity: 0.7;
   }
 `;
+
 export { Container };

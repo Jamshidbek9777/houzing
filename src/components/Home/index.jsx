@@ -4,7 +4,7 @@ import {Input, Button} from "../Generics";
 const Home = () => {
   return <Container>
     <h1>Home</h1>
-    <Input width={'200px'} placeholder={'type heeererere'}/>
+    <Input width={200 } placeholder={'type heeererere'}/>
     <Button/>
   </Container>;
 };

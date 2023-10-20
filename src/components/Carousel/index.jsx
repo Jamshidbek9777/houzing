@@ -12,8 +12,6 @@ import House1 from "../../assets/imgs/house1.png";
 import House2 from "../../assets/imgs/house2.png";
 
 const GenCarousel = () => {
-  // const rightRef = useRef();
-  // const leftRef = useRef();
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };

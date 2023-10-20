@@ -28,7 +28,7 @@ const GenCarousel = () => {
       <Content>
         <Content.Title> Skyper Pool Partment</Content.Title>
         <Content.Description>
-          112 Glenwood Ave Hyde Park, Boston, MA
+          112 Glenwood Ave Hyde Park, Boston, MA{" "}
         </Content.Description>
         <Content.Price>$5,250/month</Content.Price>
       </Content>

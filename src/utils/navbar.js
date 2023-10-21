@@ -1,7 +1,8 @@
 import React from "react";
 import useId from "../hooks/useId";
 import HomePage from "../pages/Home/index.jsx";
-import PropertiesPage from "../pages/Properties/index.jsx";
+import Properties from "../pages/Properties/index.jsx";
+// const Properties = React.lazy(()=>import("../pages/Properties"))
 import LoginPage from "../pages/Login";
 
 export const navbar = [
@@ -15,7 +16,7 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <PropertiesPage />,
+    element: <Properties />,
     title: "Properties",
     path: "/properties",
     private: false,

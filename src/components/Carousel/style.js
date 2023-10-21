@@ -3,7 +3,7 @@ import leftarrow from "../../assets/icons/left-arrow.svg";
 import rightarrow from "../../assets/icons/right-arrow.svg";
 import styled from "styled-components";
 const Container = styled.div`
-  height: 568px;
+  height: fit-content;
   /* border: 1px solid black; */
   position: relative;
 `;

@@ -24,13 +24,15 @@ const Housecard = ({ data = {} }) => {
     salePrice,
     price,
     attachments,
+    category,
   } = data || {};
   return (
     <Container>
       <Img src={(attachments && attachments[0].imgPath) || noimg} />
       <Content>
         <div className="subTitle ,inline">
-          {city} , {country}, {description}
+          {city} , {country}, {description} -{" "}
+          {(category && category.name) || "Category"}
         </div>
         <div className="info"> {address}</div>
         <Details>

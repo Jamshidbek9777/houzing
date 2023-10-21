@@ -1,9 +1,9 @@
-import React from "react";
+import React , {useEffect} from "react";
 import { Container } from "./style";
 export const Properties =()=>{
 return(
   <Container>
-    <h1>test</h1>
+
   </Container>
 )
 }

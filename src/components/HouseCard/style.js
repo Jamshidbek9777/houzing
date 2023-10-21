@@ -71,7 +71,7 @@ Icons.Love = styled.img`
   padding: 6px;
   background-color: #f6f8f9;
   border-radius: 40%;
-  margin-left: 20px ;
+  margin-left: 20px;
 `;
 
 const BedIcon = () => <Icons.Bed src={bed} alt="" />;

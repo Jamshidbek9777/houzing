@@ -9,8 +9,14 @@ import {
 } from "./style";
 import { Input, Button } from "../Generics";
 import { Dropdown } from "antd";
-// import useReplace from "../../hooks/useReplace.jsx";
+import uzeReplace from "../../hooks/useReplace";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import useSearch from "../../hooks/useSearch";
+
 const Filter = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const query = useSearch();
   const countryRef = useRef();
   const regionRef = useRef();
   const cityRef = useRef();
@@ -20,15 +26,18 @@ const Filter = () => {
   const sortRef = useRef();
   const minRef = useRef();
   const maxRef = useRef();
-
+  console.log(location);
+  console.log(query.get("city "), "params");
   const onChange = ({ target: { value, name, placeholder } }) => {
     console.log(value, name, placeholder);
+    navigate(`${location.pathname}${uzeReplace(name, value)}`);
   };
   const menu = (
     <MenuWrapper>
       <h1 className="subTitle">Address</h1>
       <Section>
         <Input
+          defaultValue={query.get("country")}
           onChange={onChange}
           ref={countryRef}
           name={"country"}
@@ -36,6 +45,7 @@ const Filter = () => {
         />
         <Input
           onChange={onChange}
+          defaultValue={query.get("region")}
           ref={regionRef}
           name={"region"}
           placeholder={"Region"}
@@ -43,11 +53,13 @@ const Filter = () => {
         <Input
           onChange={onChange}
           ref={cityRef}
+          defaultValue={query.get("city")}
           name={"city"}
           placeholder={"City"}
         />
         <Input
           onChange={onChange}
+          defaultValue={query.get("zip_code")}
           ref={zipCodeRef}
           name={"zip_code"}
           placeholder={"Zip code"}
@@ -55,14 +67,44 @@ const Filter = () => {
       </Section>
       <h1 className="subTitle">Apartment info</h1>
       <Section>
-        <Input ref={roomsRef} name={"rooms"} placeholder={"Rooms"} />
-        <Input ref={sizeRef} name={"size"} placeholder={"Size"} />
-        <Input ref={sortRef} name={"sort"} placeholder={"Sort"} />
+        <Input
+          defaultValue={query.get("rooms")}
+          onChange={onChange}
+          ref={roomsRef}
+          name={"rooms"}
+          placeholder={"Rooms"}
+        />
+        <Input
+          onChange={onChange}
+          defaultValue={query.get("size")}
+          ref={sizeRef}
+          name={"size"}
+          placeholder={"Size"}
+        />
+        <Input
+          onChange={onChange}
+          defaultValue={query.get("sort")}
+          ref={sortRef}
+          name={"sort"}
+          placeholder={"Sort"}
+        />
       </Section>
       <h1 className="subTitle">Price</h1>
       <Section>
-        <Input ref={minRef} name={"min_price"} placeholder={"Min price"} />
-        <Input ref={maxRef} name={"max_price"} placeholder={"Max price"} />
+        <Input
+          onChange={onChange}
+          defaultValue={query.get("min_price")}
+          ref={minRef}
+          name={"min_price"}
+          placeholder={"Min price"}
+        />
+        <Input
+          onChange={onChange}
+          defaultValue={query.get("max_price")}
+          ref={maxRef}
+          name={"max_price"}
+          placeholder={"Max price"}
+        />
       </Section>
       <Section>
         <Button type={"light"}>Cancel</Button>
@@ -70,7 +112,7 @@ const Filter = () => {
       </Section>
     </MenuWrapper>
   );
-  // console.log(useReplace("address", "TUIT"));
+  console.log(uzeReplace("address", "TUIT"));
   return (
     <Container>
       <Input

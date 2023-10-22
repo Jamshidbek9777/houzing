@@ -14,8 +14,8 @@ const Container = styled.div`
   max-height: 380px;
   min-height: 350px;
   border-radius: 3px;
-  border: 1px solid #e6e9ec;
-  background: #fff;
+  /* border: 1px solid #e6e9ec; */
+  /* background: #fff; */
   filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
@@ -23,19 +23,38 @@ const Container = styled.div`
 `;
 const Img = styled.img`
   width: 100%;
-  max-height: 220px;
-  min-height: 220px;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 3px;
+  /* max-height: 220px;
+  min-height: 220px; */
+  /* border-radius: 10px 10px 0px 0px; */
 `;
 
-const Content = styled.div`
-  display: flex;
-  flex-direction: ${({ footer }) => (footer ? "row" : "column")};
-  justify-content: ${({ footer }) =>
-    footer ? "space-between" : "space-around"};
+// const Content = styled.div`
+//   display: flex;
+//   flex-direction: ${({ footer }) => (footer ? "row" : "column")};
+//   justify-content: ${({ footer }) =>
+//     footer ? "space-between" : "space-around"};
 
-  padding: 16px 20px;
-  padding-top: 24px;
+//   padding: 16px 20px;
+//   padding-top: 24px;
+// `;
+const Content = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
 `;
 const Blur = styled.div`
   position: absolute;
@@ -43,7 +62,8 @@ const Blur = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.7);
 `;
 const Icons = styled.div``;
 Icons.Bed = styled.img`

@@ -1,27 +1,19 @@
 import React from "react";
-import {  Container, Content, Blur } from "./style";
+import { Container, Content, Blur } from "./style";
 import { Img } from "./style";
 import noimg from "../../assets/imgs/noimg.png";
+import Category1 from "../../assets/imgs/category1.png"
+import Category2 from "../../assets/imgs/category2.jpeg"
 
 const CategoryCard = ({ data = {} }) => {
-  const {
-    address,
-    city,
-    country,
-    description,
-    attachments,
-    category,
-  } = data || {};
+  const {name } =
+    data || {};
   return (
     <Container>
-      <Img src={(attachments && attachments[0].imgPath) || noimg} />
-      <Blur/>
+      <Img src={Category2 || noimg} />
+      <Blur />
       <Content>
-        <div className="subTitle ,inline">
-          {city} , {country}, {description} -{" "}
-          {(category && category.name) || "Category"}
-        </div>
-        <div className="info"> {address}</div>
+        {name || "Category"}
       </Content>
     </Container>
   );

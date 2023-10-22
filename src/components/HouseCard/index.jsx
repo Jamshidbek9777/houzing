@@ -14,7 +14,7 @@ import {
 import { Img } from "./style";
 import noimg from "../../assets/imgs/noimg.png";
 
-const Housecard = ({ data = {} }) => {
+const Housecard = ({ data = {}, gap }) => {
   const {
     address,
     city,
@@ -27,7 +27,7 @@ const Housecard = ({ data = {} }) => {
     category,
   } = data || {};
   return (
-    <Container>
+    <Container gap={gap}>
       <Img src={(attachments && attachments[0].imgPath) || noimg} />
       <Content>
         <div className="subTitle ,inline">

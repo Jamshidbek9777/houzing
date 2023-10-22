@@ -9,17 +9,22 @@ import resize from "../../assets/icons/resize.svg";
 
 const Container = styled.div`
   width: 100%;
-  max-width: 380px;
+  max-width: 370px;
   min-width: 330px;
-  height: 440px;
+  height: 430px;
   flex-shrink: 0;
   border-radius: 3px;
   border: 1px solid #e6e9ec;
   background: #fff;
-  filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
-  /* border: 1px solid black; */
+  margin: ${({ gap }) => {
+    return gap && `0 ${gap}px`;
+  }};
+  cursor: pointer;
+  :hover {
+    filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  }
   border-radius: 10px;
 `;
 const Img = styled.img`

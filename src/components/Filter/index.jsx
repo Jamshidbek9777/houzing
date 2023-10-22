@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Container,
   AdvancedIcon,
@@ -6,14 +6,17 @@ import {
   FilterIcon,
   MenuWrapper,
   Section,
+  SelectAnt,
 } from "./style";
 import { Input, Button } from "../Generics";
 import { Dropdown } from "antd";
 import uzeReplace from "../../hooks/useReplace";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
 
 const Filter = () => {
+  const { REACT_APP_BASE_URL: url } = process.env;
+  const [data, setData] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
   const query = useSearch();
@@ -22,7 +25,7 @@ const Filter = () => {
   const cityRef = useRef();
   const zipCodeRef = useRef();
   const roomsRef = useRef();
-  const sizeRef = useRef();
+  // const sizeRef = useRef();
   const sortRef = useRef();
   const minRef = useRef();
   const maxRef = useRef();
@@ -31,6 +34,16 @@ const Filter = () => {
   const onChange = ({ target: { value, name, placeholder } }) => {
     console.log(value, name, placeholder);
     navigate(`${location.pathname}${uzeReplace(name, value)}`);
+  };
+  useEffect(() => {
+    fetch(`${url}/categories/list`)
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res.data || []);
+      });
+  }, []);
+  const onChangeCategory = (category_id) => {
+    console.log(category_id);
   };
   const menu = (
     <MenuWrapper>
@@ -76,18 +89,29 @@ const Filter = () => {
         />
         <Input
           onChange={onChange}
-          defaultValue={query.get("size")}
-          ref={sizeRef}
-          name={"size"}
-          placeholder={"Size"}
-        />
-        <Input
-          onChange={onChange}
           defaultValue={query.get("sort")}
           ref={sortRef}
           name={"sort"}
           placeholder={"Sort"}
         />
+        {/* <Input
+          onChange={onChange}
+          defaultValue={query.get("size")}
+          ref={sizeRef}
+          name={"size"}
+          placeholder={"Size"}
+        /> */}
+        <SelectAnt
+          defaultValue="Select one"
+          labelInValue
+          onChange={onChangeCategory}
+        >
+          {data.map((value) => {
+            return (
+              <SelectAnt.Option value={value.id}>{value.name}</SelectAnt.Option>
+            );
+          })}
+        </SelectAnt>
       </Section>
       <h1 className="subTitle">Price</h1>
       <Section>
@@ -99,7 +123,7 @@ const Filter = () => {
           placeholder={"Min price"}
         />
         <Input
-          onChange={onChange}
+          onChange={onChange} 
           defaultValue={query.get("max_price")}
           ref={maxRef}
           name={"max_price"}

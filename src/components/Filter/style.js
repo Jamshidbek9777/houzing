@@ -3,6 +3,7 @@ import styled from "styled-components";
 import filter from "../../assets/icons/filter-input.svg";
 import search from "../../assets/icons/search.svg";
 import advanced from "../../assets/icons/advanced.svg";
+import { Select } from "antd";
 const Container = styled.div`
   display: flex;
   padding: var(--padding);
@@ -10,8 +11,8 @@ const Container = styled.div`
   padding-bottom: 10px;
   gap: 20px;
   width: 100%;
-    max-width: 1440px;
-    margin: auto  ;
+  max-width: 1440px;
+  margin: auto;
 `;
 
 const Icons = styled.div``;
@@ -39,6 +40,15 @@ const Section = styled.div`
   display: flex;
   gap: 20px;
 `;
+const SelectAnt = styled(Select)`
+  max-width: 150px;
+  min-width: 150px;
+  width: 100%;
+  height: 44px;
+.ant-select-selection-item{
+    height: 44px !important;
+  }
+`;
 export {
   Container,
   FilterIcon,
@@ -46,4 +56,5 @@ export {
   AdvancedIcon,
   MenuWrapper,
   Section,
+  SelectAnt,
 };

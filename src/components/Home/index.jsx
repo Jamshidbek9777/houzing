@@ -1,14 +1,14 @@
 import React from "react";
 import { Container } from "./style";
 import Carousel from "../Carousel/index";
-import Housecard from "../HouseCard";
-import CategoryCard from "../CategoryCard";
+import Recommended from "../Recommended";
+import Category from "../Category";
 const Home = () => {
   return (
     <Container>
       <Carousel />
-      <Housecard />
-      <CategoryCard />
+      <Recommended />
+      <Category />
     </Container>
   );
 };

@@ -5,6 +5,7 @@ import LogoImg from "../../assets/icons/logo.svg";
 import { navbar } from "../../utils/navbar";
 import Button from "../Generics/Button";
 import Filter from "../Filter";
+import Footer from "../Footer";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -17,24 +18,29 @@ const Home = () => {
           </Section>
           <Section>
             {navbar.map(({ title, path, hidden }, index) => {
-              return !hidden&& (
-                <Link
-                  className={({ isActive }) => isActive && "active"}
-                  key={index}
-                  to={path}
-                >
-                  {title}
-                </Link>
+              return (
+                !hidden && (
+                  <Link
+                    className={({ isActive }) => isActive && "active"}
+                    key={index}
+                    to={path}
+                  >
+                    {title}
+                  </Link>
+                )
               );
             })}
           </Section>
           <Section>
-            <Button onClick={()=>navigate("/login")} type={'dark'}>Login</Button>
+            <Button onClick={() => navigate("/login")} type={"dark"}>
+              Login
+            </Button>
           </Section>
         </Wrapper>
       </Main>
-    <Filter/>
+      <Filter />
       <Outlet />
+      <Footer />
     </Container>
   );
 };

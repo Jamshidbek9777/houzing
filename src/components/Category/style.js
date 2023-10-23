@@ -7,7 +7,6 @@ const Container = styled.div`
   position: relative;
   padding: 96px 130px;
   display: flex;
-  /* gap: 20px; */
   flex-direction: column;
   margin: auto;
   max-width: 1440px;
@@ -60,16 +59,10 @@ const Blur = styled.div`
   background: rgba(0, 0, 0, 0.4);
 `;
 const Content = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-  color: white;
+  margin-bottom: 32px;
 `;
 
 Content.Title = styled.h1`

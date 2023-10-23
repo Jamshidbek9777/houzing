@@ -6,7 +6,7 @@ import {
   DiscordIcon,
   HomeIcon,
   MapIcon,
-  Wrapper,
+  Wrapper, 
 } from "./style";
 const Why = () => {
   return (

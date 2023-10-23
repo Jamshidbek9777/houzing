@@ -47,6 +47,7 @@ Icons.Calculator = styled.img`
 Icons.Map = styled.img`
   margin-bottom: 24px;
 `;
+
 const DiscordIcon = () => <Icons.Discord src={discord} alt=" Icon" />;
 const HomeIcon = () => <Icons.Home src={home} alt=" Icon" />;
 const CalculatorIcon = () => <Icons.Discord src={calculator} alt=" Icon" />;

@@ -32,7 +32,7 @@ Content.Title = styled.div`
 `;
 Content.Item = styled.div`
   color: var(--color-5, #fff);
-  font-family: Montserrat;
+  font-family: "Montserrat";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -54,3 +54,4 @@ const PinIcon = () => <Icons.Pin src={pin} alt=" Icon" />;
 const PhoneIcon = () => <Icons.Phone src={phone} alt=" Icon" />;
 const EmailIcon = () => <Icons.Email src={email} alt=" Icon" />;
 export { Container, Content, PinIcon, PhoneIcon, EmailIcon };
+

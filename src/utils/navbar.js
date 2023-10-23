@@ -4,6 +4,7 @@ import HomePage from "../pages/Home/index.jsx";
 import Properties from "../pages/Properties/index.jsx";
 // const Properties = React.lazy(()=>import("../pages/Properties"))
 import LoginPage from "../pages/Login";
+import HouseItem from "../pages/HouseItem/index.jsx";
 
 export const navbar = [
   {
@@ -13,6 +14,14 @@ export const navbar = [
     path: "/home",
     private: false,
     hidden: false,
+  },
+  {
+    id: useId,
+    element: <HouseItem />,
+    title: "HouseItem",
+    path: "/properties/:id",
+    private: false,
+    hidden: true,
   },
   {
     id: useId,
@@ -31,4 +40,3 @@ export const navbar = [
     hidden: true,
   },
 ];
-

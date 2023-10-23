@@ -43,7 +43,7 @@ const Category = () => {
           return (
             <CategoryCard
               onClick={() => {
-                return navigate(`/properties?category_id=${value.id}`);
+                return navigate(`/properties?category=${value.name}`);
               }}
               data={value}
             />

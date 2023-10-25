@@ -32,8 +32,8 @@ const Home = () => {
             })}
           </Section>
           <Section>
-            <Button onClick={() => navigate("/login")} type={"dark"}>
-              Login
+            <Button onClick={() => navigate("/signin")} type={"dark"}>
+              Sign In
             </Button>
           </Section>
         </Wrapper>

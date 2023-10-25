@@ -50,11 +50,12 @@ body {
 .inline {
   display: flex;
   overflow: hidden;
-  white-space: nowrap ;
+  white-space: nowrap;
 }
-.slick-next::before, .slick-prev::before{
+.slick-next::before,
+.slick-prev::before {
   color: black;
 }
-.slick-dots-bottom{
+.slick-dots-bottom {
   width: inherit;
 }

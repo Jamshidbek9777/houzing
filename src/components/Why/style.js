@@ -13,6 +13,7 @@ const Container = styled.div`
   margin: auto;
   width: 100%;
   background: #f5f7fc;
+  margin-top: 50px;
   padding: 48px 0;
 `;
 

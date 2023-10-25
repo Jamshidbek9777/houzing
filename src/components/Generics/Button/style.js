@@ -1,13 +1,13 @@
 // import React from "react";
 import styled from "styled-components";
 // import {ReactComponent as filter} from "../../../assets/icons/filter-input.svg"4
-const getType = ({type}) => {
+const getType = ({ type }) => {
   switch (type) {
     case "dark":
       return {
         background: "transparent",
         border: "1px solid  #FFFFFF",
-        fontWeight: '900',
+        fontWeight: "900",
         color: "#FFFFFF",
       };
     case "light":
@@ -16,8 +16,8 @@ const getType = ({type}) => {
         border: "1px solid #e6e9ec",
         color: "black",
       };
-      case "primary":
-        return {
+    case "primary":
+      return {
         background: "#0061df",
         border: "none",
         color: "#FFFFFF",
@@ -30,6 +30,11 @@ const getType = ({type}) => {
       };
   }
 };
+const getWidth = ({ width }) => {
+  if (!width) return "130px";
+  else if (`${width}`.includes("%")) return "100%";
+  else return `${width}px`;
+};
 const Container = styled.button`
   display: flex;
   justify-content: center;
@@ -40,9 +45,9 @@ const Container = styled.button`
   cursor: pointer;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
-  width: ${({ width }) => (width ? `${width}px` : "130px")};
+  width: ${getWidth};
   ${getType}
-  :active{
+  :active {
     opacity: 0.7;
   }
 `;
